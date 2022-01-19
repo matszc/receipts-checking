@@ -1,0 +1,10 @@
+.main-bar {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.content-wrapper {
+  height: calc(100vh - 50px);
+}

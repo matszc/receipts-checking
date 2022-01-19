@@ -35,8 +35,10 @@ yarn-error.log
 /coverage
 /libpeerconnection.log
 testem.log
-/typings
+/typingsrc
 
 # System files
 .DS_Store
 Thumbs.db
+/firebase.json
+/firebase-credentials.ts
