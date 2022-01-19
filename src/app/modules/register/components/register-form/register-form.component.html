@@ -1,0 +1,15 @@
+<form fxLayout="column" [formGroup]="formGroup" (submit)="submit()">
+  <mat-form-field class="example-full-width" appearance="standard">
+    <input matInput placeholder="Email" formControlName="email">
+    <mat-error *ngIf="getControl('email').hasError('email')">
+      Nieprawidoły e-mail
+    </mat-error>
+    <mat-error *ngIf="getControl('email').hasError('required')">
+      E-mail jest wymagany
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="standard">
+    <input type="password" matInput placeholder="Hasło" formControlName="password">
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Wyślij</button>
+</form>
