@@ -8,17 +8,23 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {FirebaseAppModule} from "@angular/fire/app";
 import {AngularFireModule} from "@angular/fire/compat";
 import {config} from "../../firebase-credentials";
+import { MainBarComponent } from './components/main-bar/main-bar.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(config),
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

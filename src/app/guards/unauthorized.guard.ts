@@ -3,7 +3,7 @@ import {
   ActivatedRouteSnapshot,
   CanActivate,
   CanLoad,
-  Route,
+  Route, Router,
   RouterStateSnapshot,
   UrlSegment,
   UrlTree
@@ -17,7 +17,8 @@ import {AuthService} from "../services/auth.service";
 export class UnauthorizedGuard implements CanActivate, CanLoad {
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
   }
 
@@ -28,7 +29,7 @@ export class UnauthorizedGuard implements CanActivate, CanLoad {
   }
 
   canLoad(route: Route, segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.authService.checkUser().pipe(map(v => !v))
+    return this.authService.checkUser().pipe(map(v => v? this.router.createUrlTree(['/']) : !v))
   }
 
 }

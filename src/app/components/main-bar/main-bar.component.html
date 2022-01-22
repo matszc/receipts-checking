@@ -1,0 +1,6 @@
+<mat-toolbar color="primary" class="main-bar">
+  <button *ngIf="sidebarService.isMobile$ | async" mat-icon-button
+          type="button" (click)="sidebarService.toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>

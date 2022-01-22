@@ -1,1 +1,16 @@
-<p>side-menu works!</p>
+<mat-sidenav-container [hasBackdrop]="sidebarService.isMobile$ | async">
+  <mat-sidenav mode="side" [(opened)]="sidebarService.opened"
+               [fixedInViewport]="true" [fixedTopGap]="50" [disableClose]="!(sidebarService.isMobile$ | async)"
+  >
+    <mat-list>
+      <mat-list-item *ngFor="let item of menuItems">
+        <a [routerLink]="item.url">{{item.label}}</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content-wrapper">
+      <ng-content></ng-content>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
