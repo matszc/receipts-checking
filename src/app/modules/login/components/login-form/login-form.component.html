@@ -1,0 +1,9 @@
+<form fxLayout="column" [formGroup]="formGroup" (submit)="submit()">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" formControlName="email">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input type="password" matInput placeholder="Hasło" formControlName="password">
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Zaloguj</button>
+</form>

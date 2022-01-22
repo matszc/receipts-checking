@@ -17,7 +17,6 @@ export class RegisterComponent implements OnInit {
   }
 
   register(form: RegisterFormModel) {
-    console.log(form);
     this.registerService.signIn(form).then(v => {
       console.log(v);
     })
