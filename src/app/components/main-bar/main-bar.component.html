@@ -3,4 +3,11 @@
           type="button" (click)="sidebarService.toggleMenu()">
     <mat-icon>menu</mat-icon>
   </button>
+  <button class="user-menu" *ngIf="userAuthorized$ | async" [matMenuTriggerFor]="userMenu" mat-icon-button>
+    <mat-icon>person</mat-icon>
+  </button>
 </mat-toolbar>
+
+<mat-menu #userMenu>
+  <button mat-menu-item (click)="authService.logout()">Wyloguj</button>
+</mat-menu>

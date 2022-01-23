@@ -11,11 +11,13 @@ import {config} from "../../firebase-credentials";
 import { MainBarComponent } from './components/main-bar/main-bar.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {FlexModule} from "@angular/flex-layout";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainBarComponent
+    MainBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,9 @@ import {MatButtonModule} from "@angular/material/button";
     MatToolbarModule,
     AngularFireModule.initializeApp(config),
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    FlexModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
